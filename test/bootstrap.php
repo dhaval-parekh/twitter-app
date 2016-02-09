@@ -25,6 +25,12 @@ define('DB_NAME', 'testdb.db');
 define('DB_PATH', BASE_PATH.DS.'test'.DS);
 define('DATABASE', DB_PATH.DB_NAME);
 
+
+define('CACHE_EXPIRY_TIME',100*60); // time in second // 15 minute
+
+error_reporting(-1 & ~E_DEPRECATED);
+//error_reporting(0);
+
 session_start();
 
 // Load Libraries 

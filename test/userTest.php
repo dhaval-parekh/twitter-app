@@ -30,14 +30,13 @@ class UserUnitTest extends \PHPUnit_Framework_TestCase { //  Controller{ //
 			'cache'=>true
 		);
 	}
-	/*public function test_getTweetes(){
-		return $this->user->getUserTweete($this->screen_name,$this->reuqest);
-	} */
+	
+	public function test_getTweetes(){
+		$this->user->getUserTweete($this->screen_name,$this->reuqest);
+	} 
 	
 	public function test_getFollower(){
-		print_r($this->user->getUserFollower($this->screen_name,$this->reuqest));
+		$this->user->getUserFollower($this->screen_name,$this->reuqest);
 	}
-
-
 	
 }
