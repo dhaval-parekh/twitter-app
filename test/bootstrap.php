@@ -30,7 +30,13 @@ define('CACHE_EXPIRY_TIME',100*60); // time in second // 15 minute
 
 error_reporting(-1 & ~E_DEPRECATED);
 //error_reporting(0);
-
+// Timezone
+date_default_timezone_set('UTC');
+$timezone = '+5.30';
+$timezone = preg_replace('/[^0-9]/', '', $timezone) * 36;
+$timezone_name = timezone_name_from_abbr(null, $timezone, true);
+$timezone_name = $timezone_name?$timezone_name:'Asia/Kolkata';
+date_default_timezone_set($timezone_name);
 session_start();
 
 // Load Libraries 
