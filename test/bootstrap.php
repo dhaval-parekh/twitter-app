@@ -7,7 +7,7 @@ define('API_KEY', 'app_secreat_key');
 define('PASSWORD','aw-098@#@Q_Ckpawe94');
 define('SALT','S%#)(vcds;ldWEas@#@');
 
-define('BASE_URL', 'http://localhost/work/twitter/');
+define('BASE_URL', 'put-your-domain.com'); //Ex `http://domain.com/`
 define('INDEX', 'index.php');
 define('DS', DIRECTORY_SEPARATOR);
 
@@ -47,12 +47,13 @@ require_once(DIR_SYS.DS.'helpers'.DS.'helper.debug.php');
 require_once(DIR_SYS.DS.'core'.DS.'controller.php');
 require_once(DIR_SYS.DS.'core'.DS.'modal.php');
 
-/**/
+
 
 require_once(BASE_PATH.DS.'config'.DS.'route.php');
 
-define('TWEETER_CONSUMER_KEY', '8Co2Ja7LNKSaQouJD93xbveKS');
-define('TWEETER_CONSUMER_SECRET', '5f75uq96vapBGiQvsU8qyarfw2znQBTZDzCbancDoCOrXX78Mx');
+// Twitter
+define('TWEETER_CONSUMER_KEY', 'twitter-consumer-key');
+define('TWEETER_CONSUMER_SECRET', 'twitter-consumer-secret');
 
-define('TWEETER_ACCESS_TOKEN','3912902479-jwbCn5vQrIJ5FMKTCDvkRsK98t6AUpURpauuTo5');
-define('TWEETER_ACCESS_TOKEN_SECRET','h302OJBjutaoIqyT9CEoU4RBlA5zM3rCgfZOVUEDjc5h7');
+define('TWEETER_ACCESS_TOKEN','twitter-access-token');
+define('TWEETER_ACCESS_TOKEN_SECRET','twitter-access-token-secret');
