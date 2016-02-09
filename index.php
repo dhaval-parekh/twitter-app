@@ -19,6 +19,25 @@ require_once('config/route.php');
 if(!is_dir(UPLOAD_DIR)){	mkdir(UPLOAD_DIR,0777); }
 if(!is_dir(USER_DIR)){	mkdir(USER_DIR,0777); }
 
+$host = trim($_SERVER['HTTP_HOST']);
+$prefix = strtolower('www.');
+$request_prefix = strtolower(substr($host,0,strlen($prefix)));
+if(strpos(BASE_URL,$prefix) == true){
+	if($request_prefix!=$prefix){
+		$host = $prefix.$host;	
+		$redirect_url = 'http://'.$host.$_SERVER['REQUEST_URI'];	
+		$Url->redirect($redirect_url);
+
+	}
+}else{
+	if($request_prefix==$prefix){
+		$host =  str_replace($prefix,'',$host);
+		$redirect_url = 'http://'.$host.$_SERVER['REQUEST_URI'];	
+		$Url->redirect($redirect_url);
+
+	}
+}
+
 $GET = array();
 $GET[0] = $Url->getUrlSegment(0);
 //$GET = explode('/',$GET);
