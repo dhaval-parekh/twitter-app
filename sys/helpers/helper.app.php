@@ -1,5 +1,5 @@
 <?php
-function validateParam($requvired,&$args){
+/*function validateParam($requvired,&$args){
 	$flag = false;
 	
 	foreach($requvired as $key=>$value){
@@ -31,7 +31,6 @@ function ResourceToArray($resource){
 function _isParamValid($value,$type){
 	if(empty($value)){ return false; }
 	if($value){
-		//$value = $param['value'];
 		switch($type){
 			case 'text':
 			case 'password':
@@ -88,7 +87,7 @@ function _isParamValid($value,$type){
 	}
 	return true;
 }
-
+*/
 
 function getTweeterIcard($tweet_id){
 	$url = 'https://twitter.com/i/cards/tfw/v1/'.$tweet_id;
