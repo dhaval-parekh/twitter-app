@@ -27,7 +27,6 @@ class User extends Controller{
 			return false;
 		}
 		$user = false;
-		//$user['screen_name'] = 'themepunch';
 		
 		$data['user_tweetes'] = $data['user_followers'] = array();
 		$user['count'] = 10;
@@ -37,11 +36,8 @@ class User extends Controller{
 		$this->Template->render();
 	}
 	
-	
-	
 	// ajax Handlers
 	public function ajax_getSingleTweet($input){
-		//$input['screen_name'] = 'themepunch';
 		$response = $this->getUserTweete($input);
 		return $response[0];
 	}
@@ -58,7 +54,6 @@ class User extends Controller{
 	}
 	
 	public function ajax_getUserFollowers($input){
-		//$input['screen_name'] = 'themepunch';
 		$isHtml = isset($input['isHtml'])&&$input['isHtml']==1?true:false;
 		$input['count'] = isset($input['count'])&&is_numeric($input['count'])?$input['count']:10;
 		$input['cache'] = true; // get data from cache if available
@@ -74,7 +69,6 @@ class User extends Controller{
 	public function downloadTweets(){
 		$input = $this->Input->Get();
 		$format = isset($input['format'])?strtolower($input['format']):'json';
-		//$user['screen_name'] = 'themepunch';
 		$tweets = $this->getUserTweete($user);
 		if(! count($tweets)){
 			echo 'No tweets found';
@@ -122,7 +116,6 @@ class User extends Controller{
 					header('Content-Disposition: attachment; filename='.$header_type['filename'].'.'.$header_type['fileextension'].'');
 					$excel = $this->load_library('excel');
 					$excel->setTitle($header_type['filename']);
-					// Header
 					
 					foreach($header_fields as $label){
 						$excel->label($label);

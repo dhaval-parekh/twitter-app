@@ -51,7 +51,7 @@ $base_url = rtrim(getBaseurl(),'/').'/';
 		<div class="collapse navbar-collapse" id="header-nav">
 			<ul class="nav navbar-nav navbar-right">
 				<li> <a href="<?php echo $base_url; ?>">Home</a> </li>
-				<li> <a href="services.html">About me</a> </li>
+				<li> <a href="<?php echo $base_url.'about/'; ?>">About me</a> </li>
 				<?php if(isset($_SESSION['access_token'])): ?>
 					<li> <a href="<?php echo $base_url.'logout/'; ?>">Logout</a> </li>
 				<?php endif; ?>

@@ -22,6 +22,7 @@ $route[''] = 'index/index';
 $route['login'] = 'index/login';
 $route['logout'] = 'index/logout';
 $route['authuser'] = 'index/authUser';
+$route['about'] = 'index/about';
 
 if (isset($_SESSION['access_token'])) :
 
@@ -29,9 +30,7 @@ if (isset($_SESSION['access_token'])) :
 	$route['test'] = 'user/test'; 
 	$route['download'] = 'user/downloadTweets'; 
 	$route['download/tweets'] = 'user/downloadTweets'; 
-	/*switch($_SESSION['user']):
 	
-	endswitch;*/
 else:
 
 endif;

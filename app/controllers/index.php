@@ -56,6 +56,11 @@ class Index extends Controller{
 		return false;
 	}
 	
+	public function about(){
+		$this->Template->setContent($this->load_view('about'));
+		$this->Template->render();
+	}
+	
 	// Helper Function 
 	private function getLoginUrl(){
 		$callback = rtrim(getBaseurl(),'/').'/authuser/';
@@ -67,6 +72,7 @@ class Index extends Controller{
 	
 	
 	public function page_404(){
+		header('HTTP/1.1 404 Page Not Found');
 		$this->Template->setContent('<h1 class="margin-top-lg text-theme text-center">404</h1>');
 		$this->Template->render();
 	}

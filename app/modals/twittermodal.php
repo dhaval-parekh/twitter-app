@@ -22,7 +22,6 @@ class TwitterModal extends Modal{
 		}catch(Abraham\TwitterOAuth\TwitterOAuthException $e){
 			system_log($e);
 			return false;
-			//display($e);
 		}catch(Execption $e){
 			system_log($e);
 			return false;
