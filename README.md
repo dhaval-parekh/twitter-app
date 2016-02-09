@@ -5,8 +5,8 @@ Demo Twitter Application Developed in PHP.
 
 ### Installation
 
-* update config/config.php Put your domain name IN `BASE_URL`, and twitter application's cradential.
-* you will needed full access following directory
+* update config/config.php Put your domain name in `BASE_URL`, and twitter application's cradential.
+* you have to give full access to following directory
   - `tmp/session/`
   - `uploads/`
   - `db/`
