@@ -5,7 +5,7 @@
 		bootstrap="bootstrap.php">
 	<testsuites>
 		<testsuite name="Tests">
-			<directory suffix=".php">..\test</directory>
+			<directory suffix=".php">../test</directory>
 			<exclude>twitter</exclude>
 		</testsuite>
 	</testsuites>
