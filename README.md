@@ -3,7 +3,7 @@
 
 Demo Twitter Application Developed in PHP.
 
-### Installation
+### Requirement
 
 * 	Php Extension
 	-	`JSON`
