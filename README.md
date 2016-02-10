@@ -4,14 +4,16 @@
 Demo Twitter Application Developed in PHP.
 
 ### Requirement
-
+---------------
 * 	Php Extension
 	-	`JSON`
 	-	`sqlite3`
 	-	`mcrypt`
 	
 ### Installation
-
+----------------
+*   `git clone https://github.com/dhaval-parekh/twitter-app.git `    
+	`cd twitter-app`
 * 	update config/config.php Put your domain name in `BASE_URL`, and twitter application's cradential.
 * 	you have to give full access to following directory
 	- 	`tmp/session/`
