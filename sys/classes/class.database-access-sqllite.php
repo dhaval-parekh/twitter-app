@@ -135,4 +135,9 @@ class sqlLite_DatabaseAccess
 		public function Rollback(){
 			return $this->ExecuteNoneQuery('ROLLBACK');	
 		}*/
+		
+		public function escape_string($string){
+			$string =  $this->_connection->escapeString($string);
+			return $string;
+		}
 } 

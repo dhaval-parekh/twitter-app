@@ -134,7 +134,7 @@ class TwitterModal extends Modal{
 			
 			if(isset($data['tweets'])){
 				$query .= $can_udpate?' , ':'';
-				$data['tweets'] = mysql_real_escape_string($data['tweets']);
+				$data['tweets'] = $this->Database->escape_string($data['tweets']);
 				$query .= " tweets = '".$data['tweets']."' ";
 				$can_udpate = true;
 				$data['tweets_lastupdate'] = isset($data['tweets_lastupdate'])&&$data['tweets_lastupdate']?$data['tweets_lastupdate']:date('Y-m-d H:i:s');
@@ -148,7 +148,7 @@ class TwitterModal extends Modal{
 			
 			if(isset($data['followers'])){
 				$query .= $can_udpate?' , ':'';
-				$data['followers'] = mysql_real_escape_string($data['followers']);
+				$data['followers'] = $this->Database->escape_string($data['followers']);
 				$query .= " followers = '".$data['followers']."' ";
 				$can_udpate = true;
 				$data['followers_lastupdate'] = isset($data['followers_lastupdate'])&&$data['followers_lastupdate']?$data['followers_lastupdate']:date('Y-m-d H:i:s');
@@ -165,9 +165,9 @@ class TwitterModal extends Modal{
 			if(! $can_udpate){ return false; }
 		}else{
 			// insert code  	
-			$data['tweets'] = isset($data['tweets'])&&$data['tweets']?mysql_real_escape_string($data['tweets']):'';
+			$data['tweets'] = isset($data['tweets'])&&$data['tweets']?$this->Database->escape_string($data['tweets']):'';
 			$data['tweets_lastupdate'] = isset($data['tweets_lastupdate'])&&$data['tweets_lastupdate']?$data['tweets_lastupdate']:date('Y-m-d H:i:s');
-			$data['followers'] = isset($data['followers'])&&$data['followers']?mysql_real_escape_string($data['followers']):'';
+			$data['followers'] = isset($data['followers'])&&$data['followers']?$this->Database->escape_string($data['followers']):'';
 			$data['followers_lastupdate'] = isset($data['followers_lastupdate'])&&$data['followers_lastupdate']?$data['followers_lastupdate']:date('Y-m-d H:i:s');
 			
 			$query = "INSERT INTO usermaster (screen_name,tweets,tweets_lastupdate,followers,followers_lastupdate) VALUES
@@ -210,5 +210,4 @@ class TwitterModal extends Modal{
 		if (md5($decrypted) != $hash) return false;
 		return $decrypted;
 	}
-	
 }
